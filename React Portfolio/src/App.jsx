@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer';
-import AboutMe from './components/AboutMe/AboutMe';
-import Portfolio from './components/Portfolio/Portfolio';
-import Contact from './components/Contact/Contact';
-import Resume from './components/Resume/Resume';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import AboutMe from './components/AboutMe/AboutMe.jsx';
+import Portfolio from './components/Portfolio/Portfolio.jsx';
+import Contact from './components/Contact/Contact.jsx';
+import Resume from './components/Resume/Resume.jsx';
 import './App.css';
 
 function App() {
@@ -17,12 +13,12 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Switch>
-          <Route exact path="/" component={AboutMe} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/resume" component={Resume} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<AboutMe />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
